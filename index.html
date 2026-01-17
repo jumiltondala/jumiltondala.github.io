@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jumilton Dala — Software Developer</title>
+  <title>Monexa — Structured P2P Exchange</title>
 
   <style>
     :root {
       --bg: #0e0e0e;
-      --card: #151515;
+      --section: #151515;
       --text: #eaeaea;
-      --muted: #9a9a9a;
+      --muted: #b0b0b0;
       --accent: #2ecc71;
       --border: #2a2a2a;
     }
@@ -26,7 +26,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .container {
@@ -35,125 +35,106 @@
       padding: 72px 24px;
     }
 
-    header {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-
-    .photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 14px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-    }
-
     h1 {
       font-size: 2.4rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle {
-      margin-top: 12px;
-      color: var(--muted);
-      max-width: 560px;
-    }
-
-    .role {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    section {
-      margin-bottom: 64px;
+      margin-bottom: 32px;
     }
 
     h2 {
       font-size: 1.25rem;
-      margin-bottom: 20px;
       font-weight: 500;
+      margin-bottom: 14px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 28px;
+    p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      max-width: 760px;
+    }
+
+    /* BLOCO COM HOVER CORRETO */
+    .block {
+      background: var(--section);
+      border: 1px solid rgba(46, 204, 113, 0.35);
       border-radius: 14px;
-      max-width: 640px;
+      padding: 32px;
+      margin-bottom: 32px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .card a {
-      color: var(--accent);
-      text-decoration: none;
+    .block:hover {
+      border-color: rgba(46, 204, 113, 0.8);
+      box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.25);
     }
 
     footer {
-      border-top: 1px solid var(--border);
+      margin-top: 88px;
       padding-top: 32px;
+      border-top: 1px solid var(--border);
       color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: var(--text);
-      text-decoration: none;
-      margin-right: 16px;
-    }
-
-    footer a:hover {
-      color: var(--accent);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
   <main class="container">
-    <header>
-      <img src="photo.jpg" alt="Jumilton Dala" class="photo">
+    <h1>Monexa</h1>
 
-      <div>
-        <h1>Jumilton Dala</h1>
-        <p class="subtitle">
-          <span class="role">Software Developer</span> focused on building
-          structured systems and solving real operational problems.
-        </p>
-      </div>
-    </header>
+    <div class="block">
+      <h2>What Monexa Is</h2>
+      <p>
+        Monexa is a structured P2P currency exchange operating between Angola
+        and South Africa.
+      </p>
+      <p>
+        It is an operational system designed to reduce friction through
+        controlled intermediation.
+      </p>
+    </div>
 
-    <section>
-      <h2>Core Project</h2>
-      <div class="card">
-        <p>
-          <strong>Monexa</strong> is a structured P2P currency exchange operating
-          between Angola and South Africa.
-        </p>
-        <p>
-          It is designed as an operational system — prioritizing control,
-          clarity, and real-world constraints.
-        </p>
-        <p style="margin-top:14px;">
-          <a href="monexa.html">View Monexa case →</a>
-        </p>
-      </div>
-    </section>
+    <div class="block">
+      <h2>The Type of Problem</h2>
+      <p>
+        The problem is not access to technology, but access to predictable
+        and reliable exchange under real-world constraints.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Operational Principles</h2>
+      <p>
+        Transactions follow predefined rules for sourcing, verification,
+        pricing, and settlement.
+      </p>
+      <p>
+        Simplicity is exposed to the user while complexity is kept internal.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Control and Risk</h2>
+      <p>
+        Control is treated as a core feature, not an afterthought.
+      </p>
+      <p>
+        Balances, margins, and reconciliation are handled with full traceability.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Why This Has Value</h2>
+      <p>
+        Monexa creates value by making cross-border exchange predictable for
+        people who already understand its complexity.
+      </p>
+    </div>
 
     <footer>
-      <div>
-        <a href="https://github.com/jumiltondala" target="_blank">GitHub</a>
-        <a href="#" target="_blank">LinkedIn</a>
-        <a href="mailto:youremail@example.com">Email</a>
-      </div>
-      <div>
-        © 2026 — Focused, intentional, and built to last.
-      </div>
+      © 2026 — Monexa is an operational system, not a promise.
     </footer>
   </main>
 </body>
 </html>
+
