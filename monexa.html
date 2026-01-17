@@ -6,112 +6,57 @@
   <title>Monexa — Structured P2P Exchange</title>
 
   <style>
-    :root {
-      --bg: #0e0e0e;
-      --frame: #0b0b0b;
-      --section: #151515;
-      --text: #eaeaea;
-      --muted: #b0b0b0;
-      --accent-soft: rgba(46, 204, 113, 0.35);
-      --border: #2a2a2a;
-      --shadow-soft: 0 6px 18px rgba(0,0,0,0.35);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: #0e0e0e url("bg-desktop.png") no-repeat center / cover;
+      color: #eaeaea;
       line-height: 1.7;
       padding: 16px;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.25) transparent;
     }
 
-    /* FRAME GLOBAL */
+    body::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: rgba(255,255,255,0.25);
+      border-radius: 10px;
+    }
+
     .frame {
       max-width: 960px;
       margin: 0 auto;
-      background: var(--frame);
-      border: 1px solid var(--border);
-      border-radius: 18px;
       padding: 40px;
-      box-shadow: var(--shadow-soft);
+      border-radius: 18px;
+      background: rgba(11,11,11,0.6);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
     }
 
     h1 {
-      font-size: 2.3rem;
-      font-weight: 600;
+      font-size: 2.2rem;
       margin-bottom: 40px;
-      letter-spacing: -0.02em;
     }
 
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 14px;
-    }
-
-    p {
-      color: var(--muted);
-      margin-bottom: 14px;
-      max-width: 760px;
-    }
-
-    /* BLOCO DE LEITURA */
     .block {
-      background: var(--section);
-      border: 1px solid var(--accent-soft);
-      border-radius: 14px;
       padding: 32px;
+      border-radius: 14px;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("bg-table.png") center / cover;
+      border: 1px solid rgba(46,204,113,0.35);
       margin-bottom: 32px;
-      box-shadow: var(--shadow-soft);
-
-      /* estado inicial para animação */
-      opacity: 0;
-      transform: scale(0.98);
-      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    /* quando entra no viewport */
-    .block.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* 📱 MOBILE */
-    @media (max-width: 700px) {
-      .frame {
-        padding: 24px;
-        border-radius: 14px;
+    @media (max-width:700px){
+      body{
+        background: #0e0e0e url("bg-mobile.png") no-repeat center / cover;
       }
 
-      h1 {
-        font-size: 1.9rem;
-      }
-
-      h2 {
-        font-size: 1.15rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
-
-      .block {
-        padding: 24px;
+      .frame{
+        padding:24px;
       }
     }
   </style>
@@ -122,60 +67,17 @@
     <h1>Monexa</h1>
 
     <div class="block">
-      <h2>What Monexa Is</h2>
+      <p><strong>What Monexa Is</strong></p>
       <p>
         Monexa is a structured P2P currency exchange operating between Angola
         and South Africa.
       </p>
-      <p>
-        It is not a marketplace and not a banking alternative. It is an
-        operational system designed to reduce friction through controlled
-        intermediation.
-      </p>
     </div>
 
     <div class="block">
-      <h2>The Type of Problem</h2>
+      <p><strong>Operational Focus</strong></p>
       <p>
-        The problem is not access to technology, but access to predictable and
-        reliable exchange under real-world constraints.
-      </p>
-      <p>
-        Informal exchanges scale poorly, while formal systems introduce cost,
-        delay, and rigidity.
-      </p>
-    </div>
-
-    <div class="block">
-      <h2>Operational Principles</h2>
-      <p>
-        Every transaction follows predefined rules regarding sourcing,
-        verification, pricing, and settlement.
-      </p>
-      <p>
-        Simplicity is exposed to the user, while operational complexity is kept
-        internal.
-      </p>
-    </div>
-
-    <div class="block">
-      <h2>Control and Risk</h2>
-      <p>
-        Control is treated as a core feature, not an afterthought.
-      </p>
-      <p>
-        Balances, margins, and reconciliation are handled with full traceability.
-      </p>
-    </div>
-
-    <div class="block">
-      <h2>Why This Has Value</h2>
-      <p>
-        Monexa creates value by making cross-border exchange predictable for
-        people who already understand its complexity.
-      </p>
-      <p>
-        The system prioritizes reliability and clarity over aggressive scaling.
+        Predictability, control, and real-world execution.
       </p>
     </div>
 
@@ -183,25 +85,7 @@
       © 2026 — Monexa is an operational system, not a promise.
     </footer>
   </main>
-
-  <!-- SCRIPT: ZOOM SUAVE NA SCROLL -->
-  <script>
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    document.querySelectorAll(".block").forEach(block => {
-      observer.observe(block);
-    });
-  </script>
 </body>
 </html>
+
 
