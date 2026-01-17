@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jumilton Dala — Software Developer</title>
 
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0e0e0e;
@@ -19,8 +24,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Inter, sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
@@ -30,17 +34,28 @@
     }
 
     .container {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 64px 24px;
+      padding: 72px 24px;
     }
 
     header {
+      display: flex;
+      gap: 32px;
+      align-items: center;
       margin-bottom: 72px;
     }
 
+    .photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
     h1 {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
@@ -48,7 +63,7 @@
     .subtitle {
       margin-top: 12px;
       color: var(--muted);
-      max-width: 540px;
+      max-width: 520px;
     }
 
     .role {
@@ -61,37 +76,17 @@
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 24px;
       font-weight: 500;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      padding: 24px;
-      border-radius: 12px;
-      transition: border 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: var(--accent);
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
+      padding: 28px;
+      border-radius: 14px;
+      max-width: 620px;
     }
 
     footer {
@@ -119,56 +114,31 @@
 <body>
   <main class="container">
     <header>
-      <h1>Jumilton Dala</h1>
-      <p class="subtitle">
-        <span class="role">Junior Software Developer</span> & Founder of
-        <strong>Monexa</strong>.  
-        Focused on building clean systems, learning deeply, and turning real
-        problems into practical solutions.
-      </p>
+      <!-- SUBSTITUI photo.jpg pela tua foto -->
+      <img src="photo.jpg" alt="Jumilton Dala" class="photo">
+
+      <div>
+        <h1>Jumilton Dala</h1>
+        <p class="subtitle">
+          <span class="role">Junior Software Developer</span> & Founder of
+          <strong>Monexa</strong>.  
+          Focused on building clean systems and solving real operational problems.
+        </p>
+      </div>
     </header>
 
     <section>
       <h2>Core Project</h2>
-
-      <div class="projects">
-        <div class="card">
-          <h3>Monexa</h3>
-          <p>
-            Monexa is a real P2P currency exchange project (AOA ↔ ZAR), created
-            to solve cross-border payment friction between Angola and South
-            Africa. It operates with real clients and real capital, focusing on
-            trust, clarity, and controlled margins.
-          </p>
-
-          <p style="margin-top:12px;">
-            <a href="monexa.html" style="color:#2ecc71;text-decoration:none;">
-              View Monexa case →
-            </a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Other Work</h2>
-
-      <div class="projects">
-        <div class="card">
-          <h3>VERA</h3>
-          <p>
-            Backend-focused MVP built with Java & Spring Boot, created to
-            practice clean architecture, APIs, and system organization.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Studies & Experiments</h3>
-          <p>
-            Personal experiments with Java, backend fundamentals, and system
-            design while progressing as a software developer.
-          </p>
-        </div>
+      <div class="card">
+        <p>
+          Monexa is a structured P2P currency exchange operating between Angola
+          and South Africa, designed for clarity and operational control.
+        </p>
+        <p style="margin-top:14px;">
+          <a href="monexa.html" style="color:#2ecc71;text-decoration:none;">
+            View Monexa case →
+          </a>
+        </p>
       </div>
     </section>
 
@@ -177,7 +147,6 @@
         <a href="https://github.com/jumiltondala" target="_blank">GitHub</a>
         <a href="#" target="_blank">LinkedIn</a>
       </div>
-
       <div>
         © 2026 — Built with focus, not noise.
       </div>
