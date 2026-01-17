@@ -7,13 +7,15 @@
 
   <style>
     :root {
+      --phi: 1.618;
       --bg: #0e0e0e;
+      --frame: #0b0b0b;
       --card: #151515;
       --text: #eaeaea;
       --muted: #9a9a9a;
       --accent: #2ecc71;
-      --border: #2a2a2a;
       --accent-soft: rgba(46, 204, 113, 0.35);
+      --border: #2a2a2a;
     }
 
     * {
@@ -28,31 +30,50 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      padding: 24px;
     }
 
-    .container {
-      max-width: 920px;
+    /* FRAME GLOBAL */
+    .frame {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 72px 24px;
+      background: var(--frame);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .frame {
+        padding: 24px;
+        border-radius: 14px;
+      }
     }
 
     header {
       display: flex;
       gap: 32px;
       align-items: center;
-      margin-bottom: 64px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     .photo {
-      width: 140px;
-      height: 140px;
+      width: 132px;
+      height: 132px;
       border-radius: 14px;
       object-fit: cover;
       border: 1px solid var(--border);
     }
 
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.3rem;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
@@ -60,7 +81,7 @@
     .subtitle {
       margin-top: 12px;
       color: var(--muted);
-      max-width: 620px;
+      max-width: 560px;
     }
 
     .role {
@@ -69,7 +90,7 @@
     }
 
     section {
-      margin-bottom: 64px;
+      margin-bottom: 48px;
     }
 
     h2 {
@@ -84,13 +105,6 @@
       padding: 28px;
       border-radius: 14px;
       max-width: 640px;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      margin-bottom: 24px;
-    }
-
-    .card:hover {
-      border-color: rgba(46, 204, 113, 0.8);
-      box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.25);
     }
 
     .card a {
@@ -99,8 +113,9 @@
     }
 
     footer {
+      margin-top: 56px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
-      padding-top: 32px;
       color: var(--muted);
       display: flex;
       justify-content: space-between;
@@ -122,8 +137,7 @@
 </head>
 
 <body>
-  <main class="container">
-    <!-- HEADER -->
+  <main class="frame">
     <header>
       <img src="photo.jpg" alt="Jumilton Dala" class="photo">
 
@@ -132,13 +146,12 @@
         <p class="subtitle">
           <span class="role">Junior Software Developer</span> & Founder of
           <strong>Monexa</strong>.  
-          Focused on building clean systems, learning deeply, and turning real
-          problems into practical solutions.
+          Focused on building clean systems and turning real problems into
+          practical solutions.
         </p>
       </div>
     </header>
 
-    <!-- CORE PROJECT -->
     <section>
       <h2>Core Project</h2>
       <div class="card">
@@ -147,8 +160,8 @@
           between Angola and South Africa.
         </p>
         <p>
-          Built as an operational system, prioritizing control, clarity, and
-          real-world constraints.
+          The project focuses on clarity, operational control, and sustainable
+          margins in real-world cross-border exchanges.
         </p>
         <p style="margin-top:14px;">
           <a href="monexa.html">View Monexa case →</a>
@@ -156,27 +169,24 @@
       </div>
     </section>
 
-    <!-- OTHER PROJECTS -->
     <section>
-      <h2>Other Projects</h2>
+      <h2>Other Work</h2>
 
-      <div class="card">
+      <div class="card" style="margin-bottom:16px;">
         <p>
-          <strong>VERA</strong> — Experimental backend-oriented project focused
-          on system organization, execution discipline, and process modeling.
+          <strong>VERA</strong> — Backend-focused experimental project centered
+          on system organization and execution discipline.
         </p>
       </div>
 
       <div class="card">
         <p>
-          <strong>Applied AI Systems</strong> — Ongoing work using premium AI
-          agents as analytical and decision-support tools for project analysis,
-          validation, and long-term progression.
+          <strong>Studies & Experiments</strong> — Continuous exploration of
+          backend fundamentals and system design.
         </p>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <div>
         <a href="https://github.com/jumiltondala" target="_blank">GitHub</a>
@@ -184,7 +194,7 @@
         <a href="mailto:youremail@example.com">Email</a>
       </div>
       <div>
-        © 2026 — Systems first. Tools second.
+        © 2026 — Built with focus, not noise.
       </div>
     </footer>
   </main>
