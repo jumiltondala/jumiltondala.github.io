@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monexa — Case Study</title>
+  <title>Monexa — Structured P2P Exchange</title>
 
   <style>
     :root {
@@ -12,6 +12,7 @@
       --muted: #b0b0b0;
       --accent: #2ecc71;
       --border: #2a2a2a;
+      --card: #141414;
     }
 
     * {
@@ -29,9 +30,9 @@
     }
 
     .container {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 64px 24px;
+      padding: 72px 24px;
     }
 
     a {
@@ -39,8 +40,29 @@
       text-decoration: none;
     }
 
-    header {
-      margin-bottom: 64px;
+    .back {
+      display: inline-block;
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Highlight block with border accent */
+    .highlight-box {
+      background: linear-gradient(
+        90deg,
+        rgba(46, 204, 113, 0.9),
+        rgba(46, 204, 113, 0.2)
+      );
+      padding: 1px;
+      border-radius: 14px;
+      margin-bottom: 56px;
+    }
+
+    .highlight-inner {
+      background: var(--card);
+      border-radius: 13px;
+      padding: 32px;
     }
 
     h1 {
@@ -62,18 +84,17 @@
       font-size: 1rem;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      font-size: 0.95rem;
+    .lead {
+      color: var(--text);
+      font-size: 1.05rem;
     }
 
-    .highlight {
-      color: var(--text);
+    section {
+      max-width: 720px;
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 88px;
       padding-top: 32px;
       border-top: 1px solid var(--border);
       color: var(--muted);
@@ -86,91 +107,107 @@
   <main class="container">
     <a href="index.html" class="back">← Back to portfolio</a>
 
-    <header>
-      <h1>Monexa</h1>
-      <p class="highlight">
-        Monexa is a real P2P currency exchange project operating between Angola
-        and South Africa (AOA ↔ ZAR).
-      </p>
-      <p>
-        It was created from direct operational experience with informal
-        exchanges, real clients, and real financial friction.
-      </p>
-    </header>
+    <!-- INTRO / POSITIONING -->
+    <div class="highlight-box">
+      <div class="highlight-inner">
+        <h1>Monexa</h1>
+        <p class="lead">
+          Monexa is a structured P2P currency exchange built for clarity,
+          control, and real-world operation.
+        </p>
 
+        <p>
+          It is not designed for everyone. Monexa exists for people who already
+          understand the friction of cross-border currency exchange and the
+          limitations of both traditional banking and informal solutions.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
     <section>
       <h2>The Problem</h2>
       <p>
-        Cross-border money transfers between Angola and South Africa are often
-        slow, expensive, and inaccessible for many individuals.
+        Cross-border exchanges between Angola and South Africa often rely on
+        slow banking rails or informal trust-based networks.
       </p>
       <p>
-        While informal exchange networks exist, they usually lack structure,
-        transparency, and proper risk control, creating uncertainty for both
-        sides.
+        While informal solutions may work at small scale, they lack structure,
+        traceability, and operational control — creating uncertainty and hidden
+        risk.
       </p>
     </section>
 
+    <!-- HOW IT WORKS -->
     <section>
       <h2>How Monexa Works</h2>
       <p>
-        Monexa operates as an intermediary between currency suppliers and end
-        clients.
+        Monexa operates as a P2P exchange with intermediary responsibility.
       </p>
       <p>
-        Currency is sourced from trusted suppliers at negotiated rates and
-        exchanged with clients using controlled margins. Each transaction is
-        manually verified and tracked.
+        Currency is sourced from trusted suppliers and exchanged with end
+        clients under predefined rules, margins, and verification steps.
+      </p>
+      <p>
+        This is not an open marketplace. Each transaction is manually reviewed,
+        matched, and tracked, ensuring operational clarity and risk control.
       </p>
     </section>
 
+    <!-- BUSINESS MODEL -->
     <section>
       <h2>Business Model</h2>
       <p>
-        Revenue is generated through the spread between buy and sell rates.
-        The focus is on consistency, volume, and operational discipline rather
-        than speculation.
+        Revenue is generated through controlled spread margins between buy and
+        sell rates.
+      </p>
+      <p>
+        The focus is not scale at any cost, but consistency, traceability, and
+        sustainable volume growth.
       </p>
     </section>
 
+    <!-- WHY IT MATTERS -->
     <section>
-      <h2>Why It Matters</h2>
+      <h2>Why This Matters</h2>
       <p>
-        Monexa reduces friction for individuals who rely on cross-border
-        payments for daily needs, not investment.
+        Monexa prioritizes simplicity on the user side while maintaining strict
+        control behind the scenes.
       </p>
       <p>
-        Trust, clarity, and operational control are treated as core assets of
-        the system.
+        Complexity exists, but it is contained within the system — not pushed
+        onto the user.
       </p>
     </section>
 
+    <!-- CURRENT STAGE -->
     <section>
       <h2>Current Stage</h2>
       <p>
-        Monexa is currently operating manually using structured controls built
-        in Google Sheets, allowing full visibility over transactions, margins,
-        and cash flow.
+        Monexa is currently operating as an early-stage startup project with
+        live P2P transactions.
       </p>
       <p>
-        This phase validates the business logic before any automation.
+        All operations are tracked using structured Google Sheets, allowing
+        full visibility over margins, balances, and transaction history.
       </p>
     </section>
 
+    <!-- FUTURE -->
     <section>
-      <h2>Future Vision</h2>
+      <h2>Future Direction</h2>
       <p>
-        The long-term vision is to evolve Monexa into a fully digital platform
-        with automated workflows, compliance layers, and scalable operations.
+        The system is designed to evolve gradually toward automation, without
+        sacrificing operational control.
       </p>
       <p>
-        Technology will be introduced progressively, without compromising
-        operational clarity.
+        Technology is introduced only after processes are fully understood and
+        validated in real operation.
       </p>
     </section>
 
     <footer>
-      © 2026 — Monexa is a living project, not a pitch.
+      © 2026 — Monexa is a structured system before it is a platform.
     </footer>
   </main>
 </body>
