@@ -7,7 +7,6 @@
 
   <style>
     :root {
-      --phi: 1.618;
       --bg: #0e0e0e;
       --frame: #0b0b0b;
       --section: #151515;
@@ -29,9 +28,10 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      padding: 24px;
+      padding: 16px;
     }
 
+    /* FRAME GLOBAL */
     .frame {
       max-width: 960px;
       margin: 0 auto;
@@ -41,17 +41,11 @@
       padding: 40px;
     }
 
-    @media (max-width: 600px) {
-      .frame {
-        padding: 24px;
-        border-radius: 14px;
-      }
-    }
-
     h1 {
       font-size: 2.3rem;
       font-weight: 600;
       margin-bottom: 40px;
+      letter-spacing: -0.02em;
     }
 
     h2 {
@@ -66,6 +60,7 @@
       max-width: 760px;
     }
 
+    /* BLOCO DE LEITURA */
     .block {
       background: var(--section);
       border: 1px solid var(--accent-soft);
@@ -81,6 +76,30 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
+
+    /* 📱 MOBILE */
+    @media (max-width: 700px) {
+      .frame {
+        padding: 24px;
+        border-radius: 14px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .block {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 
@@ -95,13 +114,18 @@
         and South Africa.
       </p>
       <p>
-        It is an operational system designed to reduce friction through
-        controlled intermediation.
+        It is not a marketplace and not a banking alternative. It is an
+        operational system designed to reduce friction through controlled
+        intermediation.
       </p>
     </div>
 
     <div class="block">
       <h2>The Type of Problem</h2>
+      <p>
+        The problem is not access to technology, but access to predictable and
+        reliable exchange under real-world constraints.
+      </p>
       <p>
         Informal exchanges scale poorly, while formal systems introduce cost,
         delay, and rigidity.
@@ -111,13 +135,31 @@
     <div class="block">
       <h2>Operational Principles</h2>
       <p>
-        Transactions follow predefined rules for sourcing, verification,
-        pricing, and settlement.
+        Every transaction follows predefined rules regarding sourcing,
+        verification, pricing, and settlement.
+      </p>
+      <p>
+        Simplicity is exposed to the user, while operational complexity is kept
+        internal.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Control and Risk</h2>
+      <p>
+        Control is treated as a core feature, not an afterthought.
+      </p>
+      <p>
+        Balances, margins, and reconciliation are handled with full traceability.
       </p>
     </div>
 
     <div class="block">
       <h2>Why This Has Value</h2>
+      <p>
+        Monexa creates value by making cross-border exchange predictable for
+        people who already understand its complexity.
+      </p>
       <p>
         The system prioritizes reliability and clarity over aggressive scaling.
       </p>
@@ -129,6 +171,3 @@
   </main>
 </body>
 </html>
-
-
-
