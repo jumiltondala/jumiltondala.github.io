@@ -66,4 +66,142 @@
     .block {
       background: var(--section);
       border: 1px solid var(--accent-soft);
-      border-r
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-soft);
+
+      /* estado inicial para animação */
+      opacity: 0;
+      transform: scale(0.98);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* quando entra no viewport */
+    .block.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* 📱 MOBILE */
+    @media (max-width: 700px) {
+      .frame {
+        padding: 24px;
+        border-radius: 14px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .block {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="frame">
+    <h1>Monexa</h1>
+
+    <div class="block">
+      <h2>What Monexa Is</h2>
+      <p>
+        Monexa is a structured P2P currency exchange operating between Angola
+        and South Africa.
+      </p>
+      <p>
+        It is not a marketplace and not a banking alternative. It is an
+        operational system designed to reduce friction through controlled
+        intermediation.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>The Type of Problem</h2>
+      <p>
+        The problem is not access to technology, but access to predictable and
+        reliable exchange under real-world constraints.
+      </p>
+      <p>
+        Informal exchanges scale poorly, while formal systems introduce cost,
+        delay, and rigidity.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Operational Principles</h2>
+      <p>
+        Every transaction follows predefined rules regarding sourcing,
+        verification, pricing, and settlement.
+      </p>
+      <p>
+        Simplicity is exposed to the user, while operational complexity is kept
+        internal.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Control and Risk</h2>
+      <p>
+        Control is treated as a core feature, not an afterthought.
+      </p>
+      <p>
+        Balances, margins, and reconciliation are handled with full traceability.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Why This Has Value</h2>
+      <p>
+        Monexa creates value by making cross-border exchange predictable for
+        people who already understand its complexity.
+      </p>
+      <p>
+        The system prioritizes reliability and clarity over aggressive scaling.
+      </p>
+    </div>
+
+    <footer>
+      © 2026 — Monexa is an operational system, not a promise.
+    </footer>
+  </main>
+
+  <!-- SCRIPT: ZOOM SUAVE NA SCROLL -->
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".block").forEach(block => {
+      observer.observe(block);
+    });
+  </script>
+</body>
+</html>
+
