@@ -15,8 +15,7 @@
       --accent: #2ecc71;
       --accent-soft: rgba(46, 204, 113, 0.35);
       --border: #2a2a2a;
-      --shadow-soft: 0 6px 20px rgba(0,0,0,0.35);
-      --shadow-hover: 0 10px 28px rgba(0,0,0,0.45);
+      --shadow-soft: 0 6px 18px rgba(0,0,0,0.35);
     }
 
     * {
@@ -42,7 +41,6 @@
       border-radius: 18px;
       padding: 40px;
       box-shadow: var(--shadow-soft);
-      transition: box-shadow 0.2s ease;
     }
 
     header {
@@ -58,17 +56,11 @@
       border-radius: 14px;
       object-fit: cover;
       border: 1px solid var(--border);
-      transition: transform 0.2s ease;
-    }
-
-    .photo:hover {
-      transform: scale(1.02);
     }
 
     h1 {
       font-size: 2.3rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
     }
 
     .subtitle {
@@ -92,6 +84,7 @@
       font-weight: 500;
     }
 
+    /* CARD BASE */
     .card {
       background: var(--card);
       border: 1px solid var(--accent-soft);
@@ -99,111 +92,9 @@
       border-radius: 14px;
       max-width: 640px;
       box-shadow: var(--shadow-soft);
-      transition: 
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        border-color 0.18s ease;
-    }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(46, 204, 113, 0.6);
-    }
-
-    .card a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: var(--text);
-      text-decoration: none;
-      margin-right: 16px;
-      transition: color 0.15s ease;
-    }
-
-    footer a:hover {
-      color: var(--accent);
-    }
-
-    @media (max-width: 700px) {
-      .frame {
-        padding: 24px;
-        border-radius: 14px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      h1 {
-        font-size: 1.9rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <main class="frame">
-    <header>
-      <img src="photo.jpg" alt="Jumilton Dala" class="photo">
-      <div>
-        <h1>Jumilton Dala</h1>
-        <p class="subtitle">
-          <span class="role">Junior Software Developer</span> & Founder of
-          <strong>Monexa</strong>. Focused on building clean systems, learning
-          deeply, and turning real problems into practical solutions.
-        </p>
-      </div>
-    </header>
-
-    <section>
-      <h2>Core Project</h2>
-      <div class="card">
-        <p><strong>Monexa</strong> is a structured P2P currency exchange operating
-          between Angola and South Africa.</p>
-        <p>Focused on clarity, operational control, and sustainable margins.</p>
-        <p style="margin-top:14px;">
-          <a href="monexa.html">View Monexa case →</a>
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Other Work</h2>
-      <div class="card" style="margin-bottom:16px;">
-        <p><strong>VERA</strong> — Backend-focused experimental project.</p>
-      </div>
-      <div class="card">
-        <p><strong>Studies & Experiments</strong> — Ongoing learning and practice.</p>
-      </div>
-    </section>
-
-    <footer>
-      <div>
-        <a href="https://github.com/jumiltondala" target="_blank">GitHub</a>
-        <a href="#" target="_blank">LinkedIn</a>
-        <a href="mailto:youremail@example.com">Email</a>
-      </div>
-      <div>© 2026 — Built with focus, not noise.</div>
-    </footer>
-  </main>
-</body>
-</html>
+      /* estado inicial */
+      opacity:
 
 </html>
 
