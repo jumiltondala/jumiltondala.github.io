@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monexa — Structured P2P Exchange</title>
 
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0e0e0e;
+      --section: #151515;
       --text: #eaeaea;
       --muted: #b0b0b0;
       --accent: #2ecc71;
       --border: #2a2a2a;
-      --card: #141414;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, Inter, "Segoe UI",
-        Roboto, sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
@@ -30,71 +34,38 @@
     }
 
     .container {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 72px 24px;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    /* Highlight block with border accent */
-    .highlight-box {
-      background: linear-gradient(
-        90deg,
-        rgba(46, 204, 113, 0.9),
-        rgba(46, 204, 113, 0.2)
-      );
-      padding: 1px;
+    .block {
+      background: var(--section);
+      border: 1px solid rgba(46, 204, 113, 0.35);
       border-radius: 14px;
-      margin-bottom: 56px;
-    }
-
-    .highlight-inner {
-      background: var(--card);
-      border-radius: 13px;
       padding: 32px;
+      margin-bottom: 32px;
     }
 
     h1 {
       font-size: 2.4rem;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 500;
-      margin-top: 56px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     p {
       color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-
-    .lead {
-      color: var(--text);
-      font-size: 1.05rem;
-    }
-
-    section {
-      max-width: 720px;
+      margin-bottom: 14px;
     }
 
     footer {
-      margin-top: 88px;
+      margin-top: 80px;
       padding-top: 32px;
       border-top: 1px solid var(--border);
       color: var(--muted);
@@ -105,110 +76,36 @@
 
 <body>
   <main class="container">
-    <a href="index.html" class="back">← Back to portfolio</a>
+    <h1>Monexa</h1>
 
-    <!-- INTRO / POSITIONING -->
-    <div class="highlight-box">
-      <div class="highlight-inner">
-        <h1>Monexa</h1>
-        <p class="lead">
-          Monexa is a structured P2P currency exchange built for clarity,
-          control, and real-world operation.
-        </p>
-
-        <p>
-          It is not designed for everyone. Monexa exists for people who already
-          understand the friction of cross-border currency exchange and the
-          limitations of both traditional banking and informal solutions.
-        </p>
-      </div>
+    <div class="block">
+      <h2>Positioning</h2>
+      <p>
+        Monexa is a structured P2P currency exchange designed for clarity,
+        operational discipline, and real-world constraints.
+      </p>
     </div>
 
-    <!-- PROBLEM -->
-    <section>
+    <div class="block">
       <h2>The Problem</h2>
       <p>
-        Cross-border exchanges between Angola and South Africa often rely on
-        slow banking rails or informal trust-based networks.
+        Informal cross-border exchange systems lack structure, traceability,
+        and risk control.
       </p>
-      <p>
-        While informal solutions may work at small scale, they lack structure,
-        traceability, and operational control — creating uncertainty and hidden
-        risk.
-      </p>
-    </section>
+    </div>
 
-    <!-- HOW IT WORKS -->
-    <section>
-      <h2>How Monexa Works</h2>
+    <div class="block">
+      <h2>How It Works</h2>
       <p>
-        Monexa operates as a P2P exchange with intermediary responsibility.
+        Monexa operates with intermediary responsibility, reviewing and tracking
+        each transaction manually.
       </p>
-      <p>
-        Currency is sourced from trusted suppliers and exchanged with end
-        clients under predefined rules, margins, and verification steps.
-      </p>
-      <p>
-        This is not an open marketplace. Each transaction is manually reviewed,
-        matched, and tracked, ensuring operational clarity and risk control.
-      </p>
-    </section>
-
-    <!-- BUSINESS MODEL -->
-    <section>
-      <h2>Business Model</h2>
-      <p>
-        Revenue is generated through controlled spread margins between buy and
-        sell rates.
-      </p>
-      <p>
-        The focus is not scale at any cost, but consistency, traceability, and
-        sustainable volume growth.
-      </p>
-    </section>
-
-    <!-- WHY IT MATTERS -->
-    <section>
-      <h2>Why This Matters</h2>
-      <p>
-        Monexa prioritizes simplicity on the user side while maintaining strict
-        control behind the scenes.
-      </p>
-      <p>
-        Complexity exists, but it is contained within the system — not pushed
-        onto the user.
-      </p>
-    </section>
-
-    <!-- CURRENT STAGE -->
-    <section>
-      <h2>Current Stage</h2>
-      <p>
-        Monexa is currently operating as an early-stage startup project with
-        live P2P transactions.
-      </p>
-      <p>
-        All operations are tracked using structured Google Sheets, allowing
-        full visibility over margins, balances, and transaction history.
-      </p>
-    </section>
-
-    <!-- FUTURE -->
-    <section>
-      <h2>Future Direction</h2>
-      <p>
-        The system is designed to evolve gradually toward automation, without
-        sacrificing operational control.
-      </p>
-      <p>
-        Technology is introduced only after processes are fully understood and
-        validated in real operation.
-      </p>
-    </section>
+    </div>
 
     <footer>
-      © 2026 — Monexa is a structured system before it is a platform.
+      © 2026 — Monexa is a system before it becomes a platform.
     </footer>
   </main>
 </body>
 </html>
+
