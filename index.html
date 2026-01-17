@@ -94,9 +94,125 @@
       box-shadow: var(--shadow-soft);
 
       /* estado inicial */
-      opacity:
+      opacity: 0;
+      transform: scale(0.97);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
+    /* quando entra na viewport */
+    .card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      margin-right: 16px;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 700px) {
+      .frame {
+        padding: 24px;
+        border-radius: 14px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="frame">
+    <header>
+      <img src="photo.jpg" alt="Jumilton Dala" class="photo">
+      <div>
+        <h1>Jumilton Dala</h1>
+        <p class="subtitle">
+          <span class="role">Junior Software Developer</span> & Founder of
+          <strong>Monexa</strong>. Focused on building clean systems, learning
+          deeply, and turning real problems into practical solutions.
+        </p>
+      </div>
+    </header>
+
+    <section>
+      <h2>Core Project</h2>
+      <div class="card zoom">
+        <p><strong>Monexa</strong> is a structured P2P currency exchange operating
+          between Angola and South Africa.</p>
+        <p>Focused on clarity and operational control.</p>
+        <p style="margin-top:14px;">
+          <a href="monexa.html">View Monexa case →</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Other Work</h2>
+      <div class="card zoom" style="margin-bottom:16px;">
+        <p><strong>VERA</strong> — Backend-focused experimental project.</p>
+      </div>
+      <div class="card zoom">
+        <p><strong>Studies & Experiments</strong> — Continuous exploration.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <a href="https://github.com/jumiltondala" target="_blank">GitHub</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="mailto:youremail@example.com">Email</a>
+      </div>
+      <div>© 2026 — Built with focus, not noise.</div>
+    </footer>
+  </main>
+
+  <!-- SCRIPT DE SCROLL ZOOM -->
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".card").forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
 </html>
-
-
-
