@@ -14,6 +14,7 @@
       --muted: #b0b0b0;
       --accent-soft: rgba(46, 204, 113, 0.35);
       --border: #2a2a2a;
+      --shadow-soft: 0 6px 18px rgba(0,0,0,0.35);
     }
 
     * {
@@ -31,7 +32,6 @@
       padding: 16px;
     }
 
-    /* FRAME GLOBAL */
     .frame {
       max-width: 960px;
       margin: 0 auto;
@@ -39,13 +39,13 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 40px;
+      box-shadow: var(--shadow-soft);
     }
 
     h1 {
       font-size: 2.3rem;
       font-weight: 600;
       margin-bottom: 40px;
-      letter-spacing: -0.02em;
     }
 
     h2 {
@@ -60,13 +60,13 @@
       max-width: 760px;
     }
 
-    /* BLOCO DE LEITURA */
     .block {
       background: var(--section);
       border: 1px solid var(--accent-soft);
       border-radius: 14px;
       padding: 32px;
       margin-bottom: 32px;
+      box-shadow: var(--shadow-soft);
     }
 
     footer {
@@ -77,7 +77,6 @@
       font-size: 0.9rem;
     }
 
-    /* 📱 MOBILE */
     @media (max-width: 700px) {
       .frame {
         padding: 24px;
@@ -88,16 +87,8 @@
         font-size: 1.9rem;
       }
 
-      h2 {
-        font-size: 1.15rem;
-      }
-
       p {
         font-size: 0.95rem;
-      }
-
-      .block {
-        padding: 24px;
       }
     }
   </style>
@@ -109,60 +100,23 @@
 
     <div class="block">
       <h2>What Monexa Is</h2>
-      <p>
-        Monexa is a structured P2P currency exchange operating between Angola
-        and South Africa.
-      </p>
-      <p>
-        It is not a marketplace and not a banking alternative. It is an
-        operational system designed to reduce friction through controlled
-        intermediation.
-      </p>
+      <p>Monexa is a structured P2P currency exchange operating between Angola and South Africa.</p>
+      <p>An operational system built for controlled intermediation.</p>
     </div>
 
     <div class="block">
-      <h2>The Type of Problem</h2>
-      <p>
-        The problem is not access to technology, but access to predictable and
-        reliable exchange under real-world constraints.
-      </p>
-      <p>
-        Informal exchanges scale poorly, while formal systems introduce cost,
-        delay, and rigidity.
-      </p>
+      <h2>The Problem</h2>
+      <p>Informal exchanges scale poorly, while formal systems introduce cost and rigidity.</p>
     </div>
 
     <div class="block">
       <h2>Operational Principles</h2>
-      <p>
-        Every transaction follows predefined rules regarding sourcing,
-        verification, pricing, and settlement.
-      </p>
-      <p>
-        Simplicity is exposed to the user, while operational complexity is kept
-        internal.
-      </p>
-    </div>
-
-    <div class="block">
-      <h2>Control and Risk</h2>
-      <p>
-        Control is treated as a core feature, not an afterthought.
-      </p>
-      <p>
-        Balances, margins, and reconciliation are handled with full traceability.
-      </p>
+      <p>Rules, verification, pricing, and settlement are strictly controlled.</p>
     </div>
 
     <div class="block">
       <h2>Why This Has Value</h2>
-      <p>
-        Monexa creates value by making cross-border exchange predictable for
-        people who already understand its complexity.
-      </p>
-      <p>
-        The system prioritizes reliability and clarity over aggressive scaling.
-      </p>
+      <p>Predictability and clarity for people who understand cross-border complexity.</p>
     </div>
 
     <footer>
@@ -171,3 +125,4 @@
   </main>
 </body>
 </html>
+
