@@ -7,12 +7,13 @@
 
   <style>
     :root {
+      --white: #ffffff;
       --text: #e6e6e6;
-      --muted: #a0a0a0;
+      --muted: #b3b3b3;
       --accent: #2ecc71;
       --accent-soft: rgba(46, 204, 113, 0.3);
       --border-soft: rgba(255,255,255,0.05);
-      --frame-bg: rgba(8,8,8,0.72);
+      --frame-bg: rgba(6,6,6,0.78);
     }
 
     * {
@@ -24,7 +25,7 @@
     }
 
     body {
-      background-color: #0a0a0a;
+      background-color: #080808;
       background-image: url("bg-desktop.png");
       background-repeat: no-repeat;
       background-position: center;
@@ -48,18 +49,17 @@
     .frame {
       max-width: 960px;
       margin: 0 auto;
-      padding: 44px;
+      padding: 46px;
       border-radius: 18px;
       border: 1px solid var(--border-soft);
       background: var(--frame-bg);
-      backdrop-filter: blur(2px);
     }
 
     header {
       display: flex;
       gap: 32px;
       align-items: center;
-      margin-bottom: 56px;
+      margin-bottom: 60px;
     }
 
     .photo {
@@ -73,6 +73,7 @@
     h1 {
       font-size: 2.2rem;
       font-weight: 600;
+      color: var(--white);
     }
 
     .subtitle {
@@ -94,22 +95,34 @@
       font-size: 1.25rem;
       margin-bottom: 20px;
       font-weight: 500;
+      color: var(--white);
     }
 
     .card {
       max-width: 680px;
       margin: 0 auto;
-      padding: 30px;
+      padding: 32px;
       border-radius: 14px;
       background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
         url("bg-table.png") center / cover;
       border: 1px solid var(--accent-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.025);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.55);
     }
 
     .card p {
       margin-bottom: 12px;
-      color: var(--muted);
+      color: var(--text);
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
     footer {
@@ -150,8 +163,9 @@
         <h1>Jumilton Dala</h1>
         <p class="subtitle">
           <span class="role">Junior Software Developer</span><br>
-          Founder of <strong>Monexa</strong>. Focused on building clean systems,
-          learning deeply, and turning real problems into practical solutions.
+          Founder of <strong style="color:#fff;">Monexa</strong>. Focused on
+          building clean systems, learning deeply, and turning real problems
+          into practical solutions.
         </p>
       </div>
     </header>
@@ -162,7 +176,7 @@
         <p><strong>Monexa</strong> — structured P2P currency exchange between
         Angola and South Africa.</p>
         <p>Designed around control, predictability and real-world constraints.</p>
-        <p><a href="monexa.html" style="color:#2ecc71;">View full case →</a></p>
+        <p><a href="monexa.html">View full case →</a></p>
       </div>
     </section>
 
@@ -171,8 +185,8 @@
       <div class="card">
         <p><strong>VERA</strong> — backend-oriented experimental project focused
         on structure, execution flow and system discipline.</p>
-        <p><strong>Studies & Experiments</strong> — continuous learning through
-        small systems, layout experiments and technical prototypes.</p>
+        <p><strong>Studies & Experiments</strong> — small systems and technical
+        prototypes used to deepen understanding.</p>
       </div>
     </section>
 
@@ -180,16 +194,7 @@
       <h2>How I Work</h2>
       <div class="card">
         <p>I prioritize clarity before scale.</p>
-        <p>I design systems from the inside out, keeping interfaces simple
-        while managing complexity internally.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Tools & Focus</h2>
-      <div class="card">
-        <p>Java • Spring Boot • Git • CSS • HTML</p>
-        <p>Strong focus on structure, layout modeling and system thinking.</p>
+        <p>Interfaces stay simple while complexity is handled internally.</p>
       </div>
     </section>
 
