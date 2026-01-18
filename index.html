@@ -101,3 +101,76 @@
       padding: 28px;
       border-radius: 14px;
       background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("bg-table.png") center / cover;
+      border: 1px solid var(--accent-soft);
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-soft);
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        background-image: url("bg-mobile.png");
+      }
+
+      .frame {
+        padding: 24px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="frame">
+    <header>
+      <img src="photo.jpg" alt="Jumilton Dala" class="photo">
+      <div>
+        <h1>Jumilton Dala</h1>
+        <p class="subtitle">
+          <span class="role">Junior Software Developer</span><br>
+          Founder of <strong>Monexa</strong>. Focused on building clean systems,
+          learning deeply, and turning real problems into practical solutions.
+        </p>
+      </div>
+    </header>
+
+    <section>
+      <h2>Core Project</h2>
+      <div class="card">
+        <p>
+          <strong>Monexa</strong> is a structured P2P currency exchange operating
+          between Angola and South Africa.
+        </p>
+        <p style="margin-top:14px;">
+          <a href="monexa.html">View Monexa case →</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 — Built with focus, not noise.
+    </footer>
+  </main>
+</body>
+</html>
