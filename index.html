@@ -11,9 +11,9 @@
       --text: #e6e6e6;
       --muted: #b3b3b3;
       --accent: #2ecc71;
-      --accent-soft: rgba(46, 204, 113, 0.3);
-      --border-soft: rgba(255,255,255,0.05);
-      --frame-bg: rgba(6,6,6,0.78);
+      --accent-soft: rgba(46,204,113,0.3);
+      --border-soft: rgba(255,255,255,0.06);
+      --frame-bg: rgba(6,6,6,0.86);
     }
 
     * {
@@ -25,31 +25,33 @@
     }
 
     body {
-      background-color: #080808;
-      background-image: url("bg-desktop.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.55),
+          rgba(0,0,0,0.55)
+        ),
+        url("bg-desktop.png") center / cover no-repeat;
+      background-color: #050505;
       color: var(--text);
       line-height: 1.65;
       padding: 16px;
       overflow-y: scroll;
       scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.2) transparent;
+      scrollbar-color: rgba(255,255,255,0.25) transparent;
     }
 
     body::-webkit-scrollbar {
       width: 6px;
     }
     body::-webkit-scrollbar-thumb {
-      background-color: rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.25);
       border-radius: 10px;
     }
 
     .frame {
       max-width: 960px;
       margin: 0 auto;
-      padding: 46px;
+      padding: 48px;
       border-radius: 18px;
       border: 1px solid var(--border-soft);
       background: var(--frame-bg);
@@ -59,7 +61,7 @@
       display: flex;
       gap: 32px;
       align-items: center;
-      margin-bottom: 60px;
+      margin-bottom: 64px;
     }
 
     .photo {
@@ -88,12 +90,12 @@
     }
 
     section {
-      margin-bottom: 64px;
+      margin-bottom: 68px;
     }
 
     h2 {
       font-size: 1.25rem;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       font-weight: 500;
       color: var(--white);
     }
@@ -101,18 +103,28 @@
     .card {
       max-width: 680px;
       margin: 0 auto;
-      padding: 32px;
+      padding: 34px;
       border-radius: 14px;
       background:
-        linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
+        linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)),
         url("bg-table.png") center / cover;
       border: 1px solid var(--accent-soft);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+      opacity: 0;
+      transform: scale(0.96);
+      transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .card:hover {
-      transform: scale(1.025);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.55);
+    .card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media (hover: hover) {
+      .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 18px 38px rgba(0,0,0,0.7);
+      }
     }
 
     .card p {
@@ -139,11 +151,16 @@
 
     @media (max-width: 700px) {
       body {
-        background-image: url("bg-mobile.png");
+        background:
+          linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+          ),
+          url("bg-mobile.png") center / cover no-repeat;
       }
 
       .frame {
-        padding: 28px;
+        padding: 30px;
       }
 
       header {
@@ -164,8 +181,7 @@
         <p class="subtitle">
           <span class="role">Junior Software Developer</span><br>
           Founder of <strong style="color:#fff;">Monexa</strong>. Focused on
-          building clean systems, learning deeply, and turning real problems
-          into practical solutions.
+          building clean systems and practical solutions.
         </p>
       </div>
     </header>
@@ -175,7 +191,6 @@
       <div class="card">
         <p><strong>Monexa</strong> — structured P2P currency exchange between
         Angola and South Africa.</p>
-        <p>Designed around control, predictability and real-world constraints.</p>
         <p><a href="monexa.html">View full case →</a></p>
       </div>
     </section>
@@ -183,18 +198,9 @@
     <section>
       <h2>Other Projects</h2>
       <div class="card">
-        <p><strong>VERA</strong> — backend-oriented experimental project focused
-        on structure, execution flow and system discipline.</p>
-        <p><strong>Studies & Experiments</strong> — small systems and technical
-        prototypes used to deepen understanding.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>How I Work</h2>
-      <div class="card">
-        <p>I prioritize clarity before scale.</p>
-        <p>Interfaces stay simple while complexity is handled internally.</p>
+        <p><strong>VERA</strong> — backend-oriented experimental project.</p>
+        <p><strong>Studies & Experiments</strong> — technical prototypes and
+        layout experiments.</p>
       </div>
     </section>
 
@@ -202,6 +208,22 @@
       © 2026 — Built with focus, not noise.
     </footer>
   </main>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".card").forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
 
