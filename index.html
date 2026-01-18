@@ -7,11 +7,12 @@
 
   <style>
     :root {
-      --text: #eaeaea;
-      --muted: #9a9a9a;
+      --text: #e6e6e6;
+      --muted: #a0a0a0;
       --accent: #2ecc71;
-      --accent-soft: rgba(46, 204, 113, 0.35);
-      --border-soft: rgba(255,255,255,0.06);
+      --accent-soft: rgba(46, 204, 113, 0.3);
+      --border-soft: rgba(255,255,255,0.05);
+      --frame-bg: rgba(8,8,8,0.72);
     }
 
     * {
@@ -23,42 +24,42 @@
     }
 
     body {
-      background-color: #0e0e0e;
+      background-color: #0a0a0a;
       background-image: url("bg-desktop.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
       padding: 16px;
       overflow-y: scroll;
       scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.25) transparent;
+      scrollbar-color: rgba(255,255,255,0.2) transparent;
     }
 
     body::-webkit-scrollbar {
       width: 6px;
     }
     body::-webkit-scrollbar-thumb {
-      background-color: rgba(255,255,255,0.25);
+      background-color: rgba(255,255,255,0.2);
       border-radius: 10px;
     }
 
     .frame {
       max-width: 960px;
       margin: 0 auto;
-      padding: 40px;
+      padding: 44px;
       border-radius: 18px;
       border: 1px solid var(--border-soft);
-      background: rgba(11,11,11,0.35);
-      backdrop-filter: blur(4px);
+      background: var(--frame-bg);
+      backdrop-filter: blur(2px);
     }
 
     header {
       display: flex;
       gap: 32px;
       align-items: center;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     .photo {
@@ -77,7 +78,7 @@
     .subtitle {
       margin-top: 12px;
       color: var(--muted);
-      max-width: 620px;
+      max-width: 640px;
     }
 
     .role {
@@ -86,34 +87,34 @@
     }
 
     section {
-      margin-bottom: 56px;
+      margin-bottom: 64px;
     }
 
     h2 {
       font-size: 1.25rem;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       font-weight: 500;
     }
 
     .card {
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 28px;
+      padding: 30px;
       border-radius: 14px;
       background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
         url("bg-table.png") center / cover;
       border: 1px solid var(--accent-soft);
     }
 
-    .card a {
-      color: var(--accent);
-      text-decoration: none;
+    .card p {
+      margin-bottom: 12px;
+      color: var(--muted);
     }
 
     footer {
-      margin-top: 56px;
-      padding-top: 24px;
+      margin-top: 72px;
+      padding-top: 28px;
       border-top: 1px solid var(--border-soft);
       color: var(--muted);
       font-size: 0.95rem;
@@ -129,7 +130,7 @@
       }
 
       .frame {
-        padding: 24px;
+        padding: 28px;
       }
 
       header {
@@ -158,13 +159,37 @@
     <section>
       <h2>Core Project</h2>
       <div class="card">
-        <p>
-          <strong>Monexa</strong> is a structured P2P currency exchange operating
-          between Angola and South Africa.
-        </p>
-        <p style="margin-top:14px;">
-          <a href="monexa.html">View Monexa case →</a>
-        </p>
+        <p><strong>Monexa</strong> — structured P2P currency exchange between
+        Angola and South Africa.</p>
+        <p>Designed around control, predictability and real-world constraints.</p>
+        <p><a href="monexa.html" style="color:#2ecc71;">View full case →</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Other Projects</h2>
+      <div class="card">
+        <p><strong>VERA</strong> — backend-oriented experimental project focused
+        on structure, execution flow and system discipline.</p>
+        <p><strong>Studies & Experiments</strong> — continuous learning through
+        small systems, layout experiments and technical prototypes.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>How I Work</h2>
+      <div class="card">
+        <p>I prioritize clarity before scale.</p>
+        <p>I design systems from the inside out, keeping interfaces simple
+        while managing complexity internally.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tools & Focus</h2>
+      <div class="card">
+        <p>Java • Spring Boot • Git • CSS • HTML</p>
+        <p>Strong focus on structure, layout modeling and system thinking.</p>
       </div>
     </section>
 
@@ -174,3 +199,4 @@
   </main>
 </body>
 </html>
+
