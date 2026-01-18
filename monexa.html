@@ -9,16 +9,17 @@
     :root {
       --white: #ffffff;
       --text: #e6e6e6;
-      --muted: #b3b3b3;
       --accent-soft: rgba(46,204,113,0.3);
     }
 
     body {
-      background-color: #080808;
-      background-image: url("bg-desktop.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.6),
+          rgba(0,0,0,0.6)
+        ),
+        url("bg-desktop.png") center / cover no-repeat;
+      background-color: #050505;
       color: var(--text);
       line-height: 1.75;
       padding: 16px;
@@ -28,33 +29,43 @@
     .frame {
       max-width: 960px;
       margin: 0 auto;
-      padding: 46px;
+      padding: 48px;
       border-radius: 18px;
-      background: rgba(6,6,6,0.82);
-      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(6,6,6,0.88);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     h1 {
       font-size: 2.2rem;
-      margin-bottom: 52px;
+      margin-bottom: 56px;
       color: var(--white);
     }
 
     .block {
       max-width: 760px;
-      margin: 0 auto 44px auto;
-      padding: 36px;
+      margin: 0 auto 46px auto;
+      padding: 38px;
       border-radius: 14px;
       background:
-        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+        linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
         url("bg-table.png") center / cover;
       border: 1px solid var(--accent-soft);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+      opacity: 0;
+      transform: scale(0.97);
+      transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .block:hover {
-      transform: scale(1.02);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.55);
+    .block.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media (hover: hover) {
+      .block:hover {
+        transform: scale(1.02);
+        box-shadow: 0 18px 38px rgba(0,0,0,0.7);
+      }
     }
 
     .block p {
@@ -68,11 +79,16 @@
 
     @media (max-width:700px){
       body{
-        background-image: url("bg-mobile.png");
+        background:
+          linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+          ),
+          url("bg-mobile.png") center / cover no-repeat;
       }
 
       .frame{
-        padding:28px;
+        padding:30px;
       }
     }
   </style>
@@ -85,35 +101,49 @@
     <div class="block">
       <p><strong>Context</strong></p>
       <p>Cross-border currency exchange between Angola and South Africa is
-      often informal, inconsistent and hard to control.</p>
+      inconsistent and hard to control.</p>
     </div>
 
     <div class="block">
       <p><strong>Target Users</strong></p>
-      <p>Individuals and small operators who value predictability over
-      convenience.</p>
+      <p>People who value predictability over convenience.</p>
     </div>
 
     <div class="block">
       <p><strong>How It Works</strong></p>
-      <p>Controlled intermediation with predefined rules and verification.</p>
+      <p>Controlled intermediation with predefined rules.</p>
     </div>
 
     <div class="block">
       <p><strong>Current Stage</strong></p>
-      <p>Operational prototype with structured tracking and manual execution.</p>
+      <p>Operational prototype with structured tracking.</p>
     </div>
 
     <div class="block">
       <p><strong>Why It Matters</strong></p>
-      <p>Reduces uncertainty where formal systems fail and informal ones scale
-      poorly.</p>
+      <p>Reduces uncertainty where informal systems fail.</p>
     </div>
 
     <footer>
       © 2026 — Monexa is an operational system, not a promise.
     </footer>
   </main>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".block").forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
 
