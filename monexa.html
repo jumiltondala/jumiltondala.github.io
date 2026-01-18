@@ -7,51 +7,45 @@
 
   <style>
     body {
-      background-color: #0e0e0e;
+      background-color: #0a0a0a;
       background-image: url("bg-desktop.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      color: #eaeaea;
-      line-height: 1.7;
+      color: #e6e6e6;
+      line-height: 1.75;
       padding: 16px;
       overflow-y: scroll;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.25) transparent;
-    }
-
-    body::-webkit-scrollbar {
-      width: 6px;
-    }
-    body::-webkit-scrollbar-thumb {
-      background-color: rgba(255,255,255,0.25);
-      border-radius: 10px;
     }
 
     .frame {
       max-width: 960px;
       margin: 0 auto;
-      padding: 40px;
+      padding: 44px;
       border-radius: 18px;
-      background: rgba(11,11,11,0.35);
-      border: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(4px);
+      background: rgba(8,8,8,0.75);
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     h1 {
       font-size: 2.2rem;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
     .block {
-      max-width: 720px;
-      margin: 0 auto 32px auto;
-      padding: 32px;
+      max-width: 760px;
+      margin: 0 auto 40px auto;
+      padding: 34px;
       border-radius: 14px;
       background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
         url("bg-table.png") center / cover;
-      border: 1px solid rgba(46,204,113,0.35);
+      border: 1px solid rgba(46,204,113,0.3);
+    }
+
+    .block p {
+      margin-bottom: 12px;
+      color: #b0b0b0;
     }
 
     @media (max-width:700px){
@@ -60,7 +54,7 @@
       }
 
       .frame{
-        padding:24px;
+        padding:28px;
       }
     }
   </style>
@@ -71,18 +65,33 @@
     <h1>Monexa</h1>
 
     <div class="block">
-      <p><strong>What Monexa Is</strong></p>
-      <p>
-        Monexa is a structured P2P currency exchange operating between Angola
-        and South Africa.
-      </p>
+      <p><strong>Context</strong></p>
+      <p>Cross-border currency exchange between Angola and South Africa is
+      often informal, inconsistent and hard to control.</p>
     </div>
 
     <div class="block">
-      <p><strong>Operational Focus</strong></p>
-      <p>
-        Predictability, control, and real-world execution.
-      </p>
+      <p><strong>Target Users</strong></p>
+      <p>Individuals and small operators who already understand the problem
+      and value predictability over convenience.</p>
+    </div>
+
+    <div class="block">
+      <p><strong>How It Works</strong></p>
+      <p>Monexa operates through controlled intermediation, predefined pricing
+      rules and internal verification.</p>
+    </div>
+
+    <div class="block">
+      <p><strong>Current Stage</strong></p>
+      <p>Operational prototype managed through structured spreadsheets and
+      manual verification.</p>
+    </div>
+
+    <div class="block">
+      <p><strong>Why It Matters</strong></p>
+      <p>Monexa reduces uncertainty in environments where formal systems fail
+      and informal ones scale poorly.</p>
     </div>
 
     <footer>
