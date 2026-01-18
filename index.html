@@ -29,10 +29,6 @@
       line-height: 1.6;
       padding: 16px;
       overflow-y: scroll;
-    }
-
-    /* SCROLLBAR ESQUERDA */
-    body {
       scrollbar-width: thin;
       scrollbar-color: rgba(255,255,255,0.25) transparent;
     }
@@ -40,17 +36,11 @@
     body::-webkit-scrollbar {
       width: 6px;
     }
-
-    body::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
     body::-webkit-scrollbar-thumb {
       background-color: rgba(255,255,255,0.25);
       border-radius: 10px;
     }
 
-    /* FRAME TRANSPARENTE */
     .frame {
       max-width: 960px;
       margin: 0 auto;
@@ -93,7 +83,7 @@
     }
 
     section {
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     h2 {
@@ -102,8 +92,10 @@
       font-weight: 500;
     }
 
-    /* CARD COM IMAGEM DE FUNDO */
+    /* 🔹 CARD CENTRALIZADO NO PC */
     .card {
+      max-width: 640px;
+      margin: 0 auto; /* ← centro */
       padding: 28px;
       border-radius: 14px;
       background:
